@@ -5,7 +5,7 @@ For example:
 ```
 go run main.go n804an
 ```
-This will download a nice image of an American Airlines 787-8 in an `img` directory.
+This will download a nice image of an American Airlines Boeing 787-8 in an `img` directory.
 
 You can download more than one image by seperating the registrations with spaces:
 
