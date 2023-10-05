@@ -43,7 +43,7 @@ func fetchHyperLink(body io.ReadCloser, startTag, class string) (string, error) 
 
 		if tokenType == html.ErrorToken {
 			if tokenizer.Err() == io.EOF {
-				return "", fmt.Errorf("tag \"%v\" with class \"%v\" not found", startTag, class)
+				return "", fmt.Errorf("query not found")
 			}
 			return "", fmt.Errorf("error tokenizing html: %v", tokenizer.Err())
 		}
@@ -102,7 +102,7 @@ func downloadImage(URL, reg string) error {
 	if err != nil {
 		return err
 	}
-
+	reg = strings.Replace(reg, "/", "-", -1)
 	fdir := filepath.Join(dir, reg+".jpg")
 
 	f, err := os.Create(fdir)
